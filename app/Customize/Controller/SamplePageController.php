@@ -11,11 +11,13 @@ class SamplePageController
 {
     /**
      * @Method("GET")
-     * @Route("/sample")
+     * @Route("/sample/{id}")
      * @Template("Sample/index.twig")
      */
-    public function testMethod()
+    public function testMethod($id)
     {
-        return ['name' => 'EC-CUBE'];
+//        return ['name' => 'EC-CUBE'];
+        dump($id);
+        return new Response('Parameter is ' . $id);
     }
 }
